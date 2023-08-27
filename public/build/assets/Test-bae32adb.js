@@ -1,0 +1,1 @@
+import{o as a,c as r,a as e,t as s,b as c,w as n,u as o,L as u}from"./app-f825eddb.js";const m={__name:"Test",props:{currentPage:{type:String}},setup(t){return(l,i)=>(a(),r("div",null,[e("Welcome Test! "+s(t.currentPage)+" ",1),c(o(u),{href:"/"},{default:n(()=>[e("home")]),_:1})]))}};export{m as default};
