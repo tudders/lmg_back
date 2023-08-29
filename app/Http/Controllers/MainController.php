@@ -4,22 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\DB;
+use App\Models\Widget;
 
 class MainController extends Controller
 {
+    public function users()
+    {
+
+        $users = Widget::paginate(5);
+
+        return Inertia::render('Users', ['currentPage' => 'Users','users' => $users]);
+    
+    }
+    
+
     public function home()
     {
-
-        $users = DB::table('widget')->get();
-
-        return Inertia::render('Home', ['currentPage' => 'Home','users' => $users]);
-    
+        return Inertia::render('Home', ['currentPage' => 'Home']);
     }
-    
 
-    public function test()
+    public function newuser()
     {
-        return Inertia::render('Test', ['currentPage' => 'Test']);
+        return Inertia::render('NewUser', ['currentPage' => 'New User']);
     }
+
+
+
+
 }

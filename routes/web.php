@@ -16,4 +16,12 @@ use Inertia\Inertia;
 
 Route::get('/',     [\App\Http\Controllers\MainController::class, 'home']);
 
-Route::get('/test', [\App\Http\Controllers\MainController::class, 'test']);
+Route::get('/users', [\App\Http\Controllers\MainController::class, 'users'])->name('users');
+
+Route::get('/newuser', [\App\Http\Controllers\MainController::class, 'newuser']);
+
+Route::post('/edituser', [\App\Http\Controllers\PostController::class, 'edituser']);
+
+Route::post('/createuser', [\App\Http\Controllers\PostController::class, 'store']);
+
+Route::post('/deleteuser', [\App\Http\Controllers\PostController::class, 'deleteuser']);
